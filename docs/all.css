@@ -1,0 +1,138 @@
+* {
+	color: white;
+	padding: 0;
+	margin : 0;
+	background-color: #4A4A4A;
+	font-family: Geneva, Verdana, sans-serif;
+	cursor: default;
+}
+
+header > h1, span {
+	color: black;
+	background-color: white;
+}
+
+h1 {
+	padding-left: 7px;
+	text-align: left;
+}
+
+#controls > label {
+	color: white;
+	font-size: medium;
+	margin-left: 5px;
+	padding: 4px 20px ;
+	cursor: pointer;
+}
+
+
+#extras > a {
+	background-color: white;
+	margin-right: 10px;
+	font-size: large;
+	float:right;
+}
+
+a {
+	color: #7F4400;
+	text-decoration: none; 
+	margin: 10px;
+}
+
+a:hover {
+	text-decoration: underline; 
+}
+
+#banner {
+	margin: 14px 0px;
+	text-align: center;
+}
+
+#score-board {
+	margin: auto;
+	width: 20%;
+	background-color: white;
+	text-align: center;
+	font-size: xx-large;
+	border-radius: 20px;
+}
+
+#score-board > span {
+	padding: 0px 10px;
+}
+
+#cross-score {
+	font-style: Consolas;
+	color: rgb(58, 154, 26);
+}
+
+#nut-score {
+	font-style: Consolas;
+	color: rgb(220, 160, 20);
+}
+
+div {
+	margin-top: 10px;
+}
+
+table {
+	margin: auto;
+	border: 2px white solid; 
+	background-color: black;
+	border-radius: 2%;
+}
+
+td {
+	background-color: black;
+	padding: 0;
+	margin: 0;
+}
+
+.cell {	
+	cursor: pointer;
+	background-color: white;
+}	
+
+#show {
+	margin: 10px 0px;
+	text-align: center;
+	font-size: x-large;
+}
+
+#again {
+	margin: auto;
+	cursor: pointer;
+	width: 20%;
+	padding: 5px 0px;
+
+	color: #00FA00;
+	text-align: center;
+	font-size: x-large;
+	border: 2px white solid;
+	border-radius: 4%
+}
+
+hr {
+	width: 98%;
+	margin: auto;
+}
+
+.footer{
+	background-color: white;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	
+	margin-top: 5px;
+	padding-bottom: 5px;
+
+	text-align: center;
+	font-size: large;
+}
+
+footer > p {
+	background-color: white;
+	color: black;
+}
+

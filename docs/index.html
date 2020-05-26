@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> Tic-Tac-Toe </title>
+	<link rel="stylesheet" type="text/css" href="all.css">
+	<link rel="icon" type="image\x-icon" href="img/favicon.ico">
+</head>
+
+<body>
+	<header>
+		<h1 > Tic-Tac-Toe 
+			<span id="controls">
+				<label id="bot"> Play with AI BOT </label>
+				<label id="human"> Play with another person </label>
+			</span>
+			<span id="extras">		
+				<a href="about.html">About</a>
+				<a href="how_to_play.html">How to play?</a>
+			</span>	
+		</h1>
+	</header>
+
+	<main>
+		<h1 id="banner"> Let's play Tic-Tac-Toe!</h1>
+		<h2 id="score-board"> <span id="cross-score"> X:0</span> <span id="nut-score"> O:0</span> </h2>
+		<div id="play-grid">
+			<table >
+				<tr>
+					<td> <img class="cell" src="img/blank.png"> </td>
+					<td> <img class="cell" src="img/blank.png"> </td>
+					<td> <img class="cell" src="img/blank.png"> </td>
+				</tr>
+				<tr>
+					<td> <img class="cell" src="img/blank.png"> </td>
+					<td> <img class="cell" src="img/blank.png"> </td>
+					<td> <img class="cell" src="img/blank.png"> </td>
+				</tr>
+				<tr>
+					<td> <img class="cell" src="img/blank.png"> </td>
+					<td> <img class="cell" src="img/blank.png"> </td>
+					<td> <img class="cell" src="img/blank.png"> </td>
+				</tr>
+			</table>
+		</div>	
+		<p id="show"></p>
+		<p id="again"> Play again </p>
+	</main>
+
+	<div class="footer">
+		<footer>
+			<p> Made with lots of ⏱️, 📚 and ☕ by InputBlackBoxOutput </p>
+ 		</footer>
+	</div>
+	<script type="text/javascript" src="game.js"></script>
+</body>
+</html>
