@@ -2,34 +2,30 @@
 // Code written by Rutuparn Pawar (InputBlackBoxOutput)
 // Created on 25 May 2020
 
-// Activate verbose by finding and removing ''
+// Activate verbose by finding and removing '/// ' 
 /////////////////////////////////////////////////////////////////////////////////////////
-bot_ = document.getElementById('bot');
-
+const bot_ = document.getElementById('bot');
 bot_.addEventListener('click', function() {
-	human_.style.cssText = "background-color: white; color: black;";
-	bot_.style.cssText = "background-color: default; color: white;";
-	/// console.log("Starting game against bot");
+	bot_.style.cssText = "color: white;";
+	human_.style.cssText = "color: rgba(255,255,255,0.5);";
 
 	crossScore_.innerText = "X:0";
 	nutScore_.innerText = "O:0";
 	botGame = true;
 	again_.click();
+	console.log("Playing game with AI BOT");
 })
 
-human_ = document.getElementById('human');
-human_.style.cssText = "background-color: white; color: black;";
-
+const human_ = document.getElementById('human');
 human_.addEventListener('click', function() {
-	bot_.style.cssText = "background-color: white; color: black;";
-	human_.style.cssText = "background-color: default; color: white;";
-	/// console.log("Starting game against human");
+	bot_.style.cssText = "color: rgba(255,255,255,0.5);";
+	human_.style.cssText = "color: white;";
 
 	crossScore_.innerText = "X:0";
 	nutScore_.innerText = "O:0";
 	botGame = false;
 	again_.click();
-
+	console.log("Playing game with another person");
 })
 
 buttonGrid = document.getElementsByClassName('cell');
@@ -271,5 +267,17 @@ function buttonPressed(position) {
 	}
 }
 
+//Downloading images for faster rendering
+
+// function imageDownloader() {
+// 	let imgDownloader = document.createElement("IMG");
+// 	let PATH = "img/";
+
+// 	imgDownloader.setAttribute("src", PATH+"cross.png");
+// 	imgDownloader.setAttribute("src", PATH+"nut.png");
+
+// }
+
+// imageDownloader();
 /////////////////////////////////////////////////////////////////////////////////////////
 // EOF
