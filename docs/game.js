@@ -141,8 +141,8 @@ function playRandomMove() {
 
 function botMove(difficulty) {
 	if(!gameTied()) {
-		// Current setting: 80% chance of playing best move
-		let chance = Math.floor(Math.random() * 5);
+		// Current setting: 95% chance of playing best move
+		let chance = Math.floor(Math.random() * 20);
 
 		if(chance > 0) {
 			let vacantPos = vacantPositions();
@@ -267,17 +267,5 @@ function buttonPressed(position) {
 	}
 }
 
-//Downloading images for faster rendering
-
-// function imageDownloader() {
-// 	let imgDownloader = document.createElement("IMG");
-// 	let PATH = "img/";
-
-// 	imgDownloader.setAttribute("src", PATH+"cross.png");
-// 	imgDownloader.setAttribute("src", PATH+"nut.png");
-
-// }
-
-// imageDownloader();
 /////////////////////////////////////////////////////////////////////////////////////////
 // EOF
