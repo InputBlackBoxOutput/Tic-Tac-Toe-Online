@@ -267,5 +267,19 @@ function buttonPressed(position) {
 	}
 }
 
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Preloading Images
+var images = new Array()
+
+function preload() {
+	for(let i =0; i<preload.arguments.length; i++) {
+		images[i] = new Image();
+		images[i].src = "img/" + preload.arguments[i];
+	}
+	//console.log("Images preloaded");
+}
+
+preload("cross.png", "cross_c0.png", "cross_c1.png", "cross_c2.png","cross_d0.png","cross_d1.png","cross_d2.png","cross_do0.png","cross_do1.png","cross_do2.png","cross_r0.png","cross_r1.png","cross_r2.png","nut.png","nut_c0.png","nut_c1.png","nut_c2.png","nut_d0.png","nut_d1.png","nut_d2.png","nut_do0.png","nut_do1.png","nut_do2.png","nut_r0.png","nut_r1.png","nut_r2.png");
 /////////////////////////////////////////////////////////////////////////////////////////
 // EOF
