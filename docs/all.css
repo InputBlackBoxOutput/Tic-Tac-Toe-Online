@@ -56,12 +56,13 @@ a:hover {
 }
 
 #again {
+	background-color: white;
 	cursor: pointer;
 	width: 20%;
 
-	color: #00FA00;
+	color: #228B22;
 	text-align: center;
-	font-size: x-large;
+	font-size: xx-large;
 	border: 2px white solid;
 	border-radius: 4%
 }
