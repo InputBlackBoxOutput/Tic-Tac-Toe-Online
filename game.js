@@ -2,8 +2,9 @@
 // Code written by Rutuparn Pawar (InputBlackBoxOutput)
 // Created on 25 May 2020
 
-// Activate verbose by finding and removing '/// ' 
 /////////////////////////////////////////////////////////////////////////////////////////
+// DOM linking to game mode setting
+
 const bot_ = document.getElementById('bot');
 bot_.addEventListener('click', function() {
 	bot_.style.cssText = "color: white;";
@@ -28,6 +29,8 @@ human_.addEventListener('click', function() {
 	console.log("Playing game with another person");
 })
 
+///////////////////////////////////////////////////////////////////////////////////////////
+// DOM linking to play grid and score area
 buttonGrid = document.getElementsByClassName('cell');
 for(let i=0; i<buttonGrid.length; i++){
 	buttonGrid[i].addEventListener('click', function() {
@@ -37,18 +40,64 @@ for(let i=0; i<buttonGrid.length; i++){
 
 show_ = document.getElementById('show');
 
-again_ = document.getElementById('again');
-again_.hidden = true;
-again_.addEventListener('click', function() {
+
+function restart() {
 	clearPlayArea();
 	currentPlayer = CROSS;
 	gameOver = false;
 	show_.innerText = "";
 	again_.hidden = true;
+}
+
+again_ = document.getElementById('again');
+again_.hidden = true;
+again_.addEventListener('click', function() {
+	restart();
+})
+
+document.getElementById("restart").addEventListener('click', function () {
+	restart();
 })
 
 crossScore_ = document.getElementById('cross-score');
 nutScore_ = document.getElementById('nut-score');
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// DOM linking to game difficulty
+difficulty = 1;
+_easy = document.getElementById("easy");
+_hard = document.getElementById("hard");
+_hard.style.cssText = "background-color: #3A9A1A";
+_impos = document.getElementById("impossible");
+
+
+function resetDifficultyBorder() {
+	_easy.style.cssText = "";
+	_hard.style.cssText = "";
+	_impos.style.cssText = "";
+}
+
+_easy.addEventListener('click', function() {
+	difficulty = 0;
+	resetDifficultyBorder();
+	_easy.style.cssText = "background-color: #3A9A1A";
+	restart();
+})
+
+_hard.addEventListener('click', function() {
+	difficulty = 1;
+	resetDifficultyBorder();
+	_hard.style.cssText = "background-color: #3A9A1A";
+	restart();
+})
+
+_impos.addEventListener('click', function() {
+	difficulty = 2;
+	resetDifficultyBorder();
+	_impos.style.cssText = "background-color: #3A9A1A";
+	restart();
+})
+
 /////////////////////////////////////////////////////////////////////////////////////////
 let gridMap = ['  ', '  ', '  ', '  ', '  ', '  ', '  ', '  ', '  '];
 let CROSS = 'X';
@@ -139,10 +188,10 @@ function playRandomMove() {
 	}
 }
 
-function botMove(difficulty) {
+// Hand written rules based AI
+function botMove(level) {
 	if(!gameTied()) {
-		// Current setting: 95% chance of playing best move
-		let chance = Math.floor(Math.random() * 20);
+		let chance = Math.floor(Math.random() * level);
 
 		if(chance > 0) {
 			let vacantPos = vacantPositions();
@@ -181,6 +230,29 @@ function botMove(difficulty) {
 		}
 	}
 	
+}
+
+
+function botMoveMinMax() {
+	let x, y, move;
+	transferGridToBoard();
+
+	if (emptyCells(board).length == 9) {
+		x = parseInt(Math.random() * 3);
+		y = parseInt(Math.random() * 3);
+	}
+	else {
+		move = minmax(board, emptyCells(board).length, COMP);
+		x = move[0];
+		y = move[1];
+	}
+
+	if(!gameTied()) {
+		move = 3*x + y;
+		gridMap[move] = NUT;
+		buttonGrid[move].src = "img/nut.png";
+	}
+	// console.log([x,y]);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -224,15 +296,18 @@ function showWinner(player, winBy) {
 
 let show = function(stuff) { show_.innerText = stuff;}
 
-
-
 function buttonPressed(position) {
 	if(gameOver == false) {
 		stat = placeCrossNut(position, currentPlayer);
 		if(stat == false) return;
 
 		if(botGame) {
-			botMove();
+			if(difficulty == 0)
+				botMove(10);
+			else if(difficulty == 1)
+				botMove(20);	
+			else
+				botMoveMinMax();
 		}
 
 		let winCross = winnerCheck(CROSS);
