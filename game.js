@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // DOM linking to game mode setting
 
+const difficulty_ = document.getElementById("difficulty");
 const bot_ = document.getElementById('bot');
 bot_.addEventListener('click', function() {
 	bot_.style.cssText = "color: white;";
@@ -14,6 +15,8 @@ bot_.addEventListener('click', function() {
 	nutScore_.innerText = "O:0";
 	botGame = true;
 	again_.click();
+
+	difficulty_.hidden = false;
 	console.log("Playing game with AI BOT");
 })
 
@@ -26,6 +29,8 @@ human_.addEventListener('click', function() {
 	nutScore_.innerText = "O:0";
 	botGame = false;
 	again_.click();
+
+	difficulty_.hidden = true;
 	console.log("Playing game with another person");
 })
 
