@@ -70,29 +70,21 @@ nutScore_ = document.getElementById('nut-score');
 //////////////////////////////////////////////////////////////////////////////////////////
 // DOM linking to game difficulty
 difficulty = 1;
-_easy = document.getElementById("easy");
-_hard = document.getElementById("hard");
-_hard.style.cssText = "background-color: #3A9A1A";
+_pos = document.getElementById("possible");
+_pos.style.cssText = "background-color: #3A9A1A";
 _impos = document.getElementById("impossible");
 
 
 function resetDifficultyBorder() {
-	_easy.style.cssText = "";
-	_hard.style.cssText = "";
+	_pos.style.cssText = "";
 	_impos.style.cssText = "";
 }
 
-_easy.addEventListener('click', function() {
-	difficulty = 0;
-	resetDifficultyBorder();
-	_easy.style.cssText = "background-color: #3A9A1A";
-	restart();
-})
 
-_hard.addEventListener('click', function() {
+_pos.addEventListener('click', function() {
 	difficulty = 1;
 	resetDifficultyBorder();
-	_hard.style.cssText = "background-color: #3A9A1A";
+	_pos.style.cssText = "background-color: #3A9A1A";
 	restart();
 })
 
@@ -307,10 +299,8 @@ function buttonPressed(position) {
 		if(stat == false) return;
 
 		if(botGame) {
-			if(difficulty == 0)
-				botMove(10);
-			else if(difficulty == 1)
-				botMove(20);	
+			if(difficulty == 1)
+				botMove(18);	
 			else
 				botMoveMinMax();
 		}

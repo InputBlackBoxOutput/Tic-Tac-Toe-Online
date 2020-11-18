@@ -3,7 +3,7 @@
 
 <head>
 	<title> Tic-Tac-Toe </title>
-	<meta name="description" content="Play tic-tac-toe with an AI bot">
+	<meta name="description" content="Play Tic-Tac-Toe with an AI bot">
 	<meta charset="utf-8">
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -17,10 +17,10 @@
 	  <div class="navbar-collapse">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item active">
-	        <a class="nav-link" id="bot"> Play with AI BOT</span></a>
+	        <a class="nav-link" id="bot"> Play with AI bot</span></a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" id="human">Play with another person</a>
+	        <a class="nav-link" id="human">Play with person</a>
 	      </li>
 	      <li class="nav-item">
 	        <a class="nav-link" href="how_to_play.html">How to play?</a>
@@ -42,9 +42,8 @@
 
 		<div class="row m-2 d-flex justify-content-center">
 			<div class="btn-group" role="group" aria-label="Basic example" id="difficulty">
-			  <button type="button" class="btn btn-secondary" id="easy">Easy</button>
-			  <button type="button" class="btn btn-secondary" id="hard">Hard</button>
-			  <button type="button" class="btn btn-secondary" id="impossible">Impossible</button>
+			  <button type="button" class="btn btn-light" id="possible">Possible</button>
+			  <button type="button" class="btn btn-light" id="impossible">Impossible</button>
 			</div>
 			<button type="button" class="btn btn-danger ml-3" id="restart">Restart</button>
 		</div>
@@ -71,12 +70,39 @@
 		</div>
 		<div class="row m-2 d-flex justify-content-center">
 			<p id="again"> Play again </p>
+		</div>		
+	</div>	
+
+	<div class="container-fluid">
+		<hr>
+		<h2> How does the bot make it impossible to win? </h2>
+		<p>
+		A Tic-Tac-Toe bot uses an algorithm called minimax to look into the future and find out the best move it can play.
+		</p>
+
+		<blockquote class="blockquote">
+		  <p>Analogy: Doctor strange playing Tic-Tac-Toe with the time stone</p>
+		</blockquote>
+
+		<p>
+		First, the computer looks at all the possible moves it can play. Then it looks at all the moves that a human can play for each move it can make. For each move it check who wins. If the human is wins that branch is discarded and if the bot wins it will make a move leading into that branch.
+		</p>
+
+		<p>
+		This algorithm is also used by chess AI bots. When used to find best move for a chess game, we limit the search by the depth of the game tree that it looks at while finding the best move. This is done in order to reduce the computation and time taken by the bot. In the case of Tic-Tac-Toe, limiting the depth is not required since the game tree is small.
+		</p>
+
+		<hr>
+		<h4> The following image shows a game tree as seen by the minimax algorithm </h4>
+		<div class="row d-flex justify-content-center">
+			<img src="img/minimax.png" class="figure-img img-fluid rounded" alt="SOS in Morse code">
 		</div>
+		  
 		<hr>
 		<div class="row footer d-flex justify-content-center">
 			<h5> © 2020 Rutuparn Pawar [InputBlackBoxOutput] </h5>
-		</div>		
-	</div>	
+		</div>
+	</div>
 	<script type="text/javascript" src="minmax.js"></script>
 	<script type="text/javascript" src="game.js"></script>
 </body>
