@@ -5,34 +5,34 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // DOM linking to game mode setting
 
-const difficulty_ = document.getElementById("difficulty");
-const bot_ = document.getElementById('bot');
-bot_.addEventListener('click', function() {
-	bot_.style.cssText = "color: white;";
-	human_.style.cssText = "color: rgba(255,255,255,0.5);";
+// const difficulty_ = document.getElementById("difficulty");
+// const bot_ = document.getElementById('bot');
+// bot_.addEventListener('click', function() {
+// 	bot_.style.cssText = "color: white;";
+// 	human_.style.cssText = "color: rgba(255,255,255,0.5);";
 
-	crossScore_.innerText = "X:0";
-	nutScore_.innerText = "O:0";
-	botGame = true;
-	again_.click();
+// 	crossScore_.innerText = "X:0";
+// 	nutScore_.innerText = "O:0";
+// 	botGame = true;
+// 	again_.click();
 
-	difficulty_.hidden = false;
-	console.log("Playing game with AI BOT");
-})
+// 	difficulty_.hidden = false;
+// 	console.log("Playing game with AI BOT");
+// })
 
-const human_ = document.getElementById('human');
-human_.addEventListener('click', function() {
-	bot_.style.cssText = "color: rgba(255,255,255,0.5);";
-	human_.style.cssText = "color: white;";
+// const human_ = document.getElementById('human');
+// human_.addEventListener('click', function() {
+// 	bot_.style.cssText = "color: rgba(255,255,255,0.5);";
+// 	human_.style.cssText = "color: white;";
 
-	crossScore_.innerText = "X:0";
-	nutScore_.innerText = "O:0";
-	botGame = false;
-	again_.click();
+// 	crossScore_.innerText = "X:0";
+// 	nutScore_.innerText = "O:0";
+// 	botGame = false;
+// 	again_.click();
 
-	difficulty_.hidden = true;
-	console.log("Playing game with another person");
-})
+// 	difficulty_.hidden = true;
+// 	console.log("Playing game with another person");
+// })
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // DOM linking to play grid and score area

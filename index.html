@@ -15,13 +15,13 @@
 	  <a class="navbar-brand"><h3>Tic-Tac-Toe</h3></a>
 
 	  <div class="navbar-collapse">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item active">
+	    <ul class="navbar-nav ml-auto">
+	      <!-- <li class="nav-item active">
 	        <a class="nav-link" id="bot"> Play with AI bot</span></a>
 	      </li>
 	      <li class="nav-item">
 	        <a class="nav-link" id="human">Play with person</a>
-	      </li>
+	      </li> -->
 	      <li class="nav-item">
 	        <a class="nav-link" href="how_to_play.html">How to play?</a>
 	      </li>
@@ -88,16 +88,20 @@
 		First, the computer looks at all the possible moves it can play. Then it looks at all the moves that a human can play for each move it can make. For each move it check who wins. If the human is wins that branch is discarded and if the bot wins it will make a move leading into that branch.
 		</p>
 
+		
+		<h5> The following image shows a game tree as seen by the minimax algorithm </h5> 
+		<br>
+		<div class="row d-flex justify-content-center">
+			<img src="img/minimax.png" class="figure-img img-fluid rounded" alt="Minimax game tree">
+		</div>
+		<br>
 		<p>
-		This algorithm is also used by chess AI bots. When used to find best move for a chess game, we limit the search by the depth of the game tree that it looks at while finding the best move. This is done in order to reduce the computation and time taken by the bot. In the case of Tic-Tac-Toe, limiting the depth is not required since the game tree is small.
+			This algorithm is also used by chess AI bots. When used to find best move for a chess game, we limit the search by
+			the depth of the game tree that it looks at while finding the best move. This is done in order to reduce the
+			computation and time taken by the bot. In the case of Tic-Tac-Toe, limiting the depth is not required since the game
+			tree is small.
 		</p>
 
-		<hr>
-		<h4> The following image shows a game tree as seen by the minimax algorithm </h4>
-		<div class="row d-flex justify-content-center">
-			<img src="img/minimax.png" class="figure-img img-fluid rounded" alt="SOS in Morse code">
-		</div>
-		  
 		<hr>
 		<div class="row footer d-flex justify-content-center">
 			<h5> © 2020 Rutuparn Pawar [InputBlackBoxOutput] </h5>
