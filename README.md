@@ -1,8 +1,11 @@
 # Tic-Tac-Toe-Online
-Play Tic-Tac-Toe online against  AI bot or another person.
+Play Tic-Tac-Toe online against AI bot.
 
+The AI bot uses minimax algorithm to look into the future in order to find an optimum move
 
-# Screenshot
-<img src="https://github.com/InputBlackBoxOutput/Tic-Tac-Toe-Online/blob/master/screenshot.png" height=400>
+[Play the game](https://tic-tac-toe-game-online.netlify.app/)
+
+## Screenshot
+![Screenshot](screenshot.png)
 
 ## Made with lots of ⏱️, 📚 and ☕ by InputBlackBoxOutput
