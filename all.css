@@ -79,3 +79,7 @@ footer {
 	bottom: 0;
 	left: 0;
 }
+
+.modal-content {
+	color:black;
+}
